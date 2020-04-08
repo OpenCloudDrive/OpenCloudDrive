@@ -1,0 +1,22 @@
+plugins {
+	id 'org.springframework.boot'
+	id 'io.spring.dependency-management'
+	id 'java'
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+
+  compileOnly 'org.projectlombok:lombok'
+
+  // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter
+  compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.+'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}

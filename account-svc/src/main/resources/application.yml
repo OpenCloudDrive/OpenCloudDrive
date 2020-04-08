@@ -1,0 +1,41 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://122.51.165.20:65433/insight_dev_20200323?useSSL=false&currentSchema=account
+    username: insight_dev_u
+    password: 1IuZ8JwGk8NN3jD9
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    clean-disabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  devtools:
+    add-properties: true
+    livereload:
+      enabled: true
+    restart:
+      exclude: META-INF/resources/**,resources/**,static/**,public/**,templates/**,**/*Test.class,**/*Tests.class,git.properties,META-INF/build-info.properties
+      enabled: true
+  redis:
+    host: localhost
+    port: 6379
+    password: Fy958e5mmyb7Ta4H
+    database: 2
+    username: username
+    namespace: allwin-sit
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  security:
+    user:
+      password: 123456
+      name: alex
+
+mybatis-plus:
+  mapper-locations: ['classpath:/mapper/*Mapper.xml']
+  global-config:
+    db-config:
+      logic-delete-value: false
+      logic-not-delete-value: true
+      id-type: auto

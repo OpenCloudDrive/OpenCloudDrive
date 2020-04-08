@@ -1,0 +1,24 @@
+
+dependencies {
+  management platform("org.springframework:spring-framework-bom:$springVersion")
+	constraints {
+
+	}
+}
+
+configurations {
+	all {
+		resolutionStrategy {
+			componentSelection {
+				all { ComponentSelection selection ->
+					def candidate = selection.getCandidate()
+					def version = candidate.getVersion().toLowerCase()
+
+					if (version.contains("alpha") || version.contains("beta")) {
+						selection.reject("Rejecting $selection with version $version as alpha/beta")
+					}
+				}
+			}
+		}
+	}
+}

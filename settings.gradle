@@ -1,0 +1,9 @@
+rootProject.name = 'drive'
+include(':account-api')
+include(':account-svc')
+include(':api-gateway')
+include(':auth-api')
+include(':auth-svc')
+include(':discovery-service')
+include(':drive:drive-api')
+include(':drive:drive-svc')
